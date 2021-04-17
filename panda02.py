@@ -38,13 +38,13 @@ df.head()
 # パスを書いていないので結果は出ません。
 from glob import glob
 
-base_df = pd.DataFrame()
+df = pd.DataFrame()
 
 files = glob('Excelファイルまでのパス/*.xlsx')
 
 for i in files:
     each_df = pd.read_excel(i)
-    df = pd.concat([base_df, each_df])
+    df = pd.concat([df, each_df])
 
 # 折れ線グラフを描画する。
 fig, ax = plt.subplots()
